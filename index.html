@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteLock | Secure Student Voting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">V</span>
+            VoteLock<span class="brand-dot">.</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#election">Elections</a>
+            <a href="#security">Security</a>
+            <a href="#verify">Verify Receipt</a>
+        </nav>
+
+        <a href="#election" class="nav-button">Explore Election ↗</a>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="live-dot"></span>
+                    CRYPTOGRAPHIC VOTING PLATFORM
+                </div>
+
+                <h1>Your vote.<br>
+                    <span>Your privacy.</span><br>
+                    Your choice.
+                </h1>
+
+                <p>
+                    A student voting platform designed around cryptography.
+                    Protect ballot confidentiality, detect tampering, and
+                    verify that your ballot has been recorded.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#election" class="primary-button">
+                        Explore Election <span>→</span>
+                    </a>
+                    <a href="#security" class="secondary-button">
+                        Explore the 5 locks
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span>✓</span> Privacy-focused design
+                    <span>✓</span> Verifiable records
+                </div>
+            </div>
+
+            <div class="vault">
+                <div class="vault-glow"></div>
+                <div class="vault-ring ring-one"></div>
+                <div class="vault-ring ring-two"></div>
+                <div class="vault-center">
+                    <div class="shield">✓</div>
+                    <span>VOTELOCK</span>
+                    <small>SECURE BALLOT</small>
+                </div>
+                <div class="orbit-label label-top">AES-256</div>
+                <div class="orbit-label label-right">SHA-256</div>
+                <div class="orbit-label label-bottom">RSA</div>
+                <div class="orbit-label label-left">PRIVACY</div>
+            </div>
+        </section>
+
+        <section class="trust-strip">
+            <div>
+                <span class="strip-number">01</span>
+                <span>Verify voter eligibility</span>
+            </div>
+            <div>
+                <span class="strip-number">02</span>
+                <span>Protect ballot secrecy</span>
+            </div>
+            <div>
+                <span class="strip-number">03</span>
+                <span>Detect record changes</span>
+            </div>
+            <div>
+                <span class="strip-number">04</span>
+                <span>Verify ballot inclusion</span>
+            </div>
+        </section>
+
+        <section class="section" id="election">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">YOUR CAMPUS. YOUR VOICE.</div>
+                    <h2>Available elections<span class="brand-dot">.</span></h2>
+                    <p>Review an election and see how the voting process works.</p>
+                </div>
+                <span class="demo-badge">FRONTEND DEMO</span>
+            </div>
+
+            <article class="election-card">
+                <div class="election-art">
+                    <div class="art-circle">V</div>
+                    <span class="art-caption">STUDENT ELECTIONS</span>
+                </div>
+
+                <div class="election-info">
+                    <div class="status"><span></span> DEMONSTRATION ELECTION</div>
+                    <h3>Student Council Election</h3>
+                    <p>
+                        Choose a candidate in this local interface demonstration.
+                        No real ballot will be submitted.
+                    </p>
+                    <div class="election-meta">
+                        <span>♧ Student Council</span>
+                        <span>▣ Demo candidates</span>
+                    </div>
+                    <button class="primary-button" id="openVote">
+                        Open voting demo <span>→</span>
+                    </button>
+                </div>
+
+                <div class="election-side">
+                    <span class="side-label">PROTECTION</span>
+                    <strong>5 Locks</strong>
+                    <span>Cryptographic design</span>
+                </div>
+            </article>
+
+            <div class="demo-voting hidden" id="votingPanel">
+                <div class="demo-panel-heading">
+                    <div>
+                        <div class="eyebrow">INTERACTIVE PREVIEW</div>
+                        <h3>Select a demo candidate</h3>
+                    </div>
+                    <button id="closeVote" class="close-button" aria-label="Close voting demo">✕</button>
+                </div>
+
+                <p class="muted">
+                    This is a UI demonstration only. It does not authenticate
+                    you or create a real vote.
+                </p>
+
+                <div class="candidate-list">
+                    <label class="candidate">
+                        <input type="radio" name="candidate" value="Candidate A">
+                        <span class="candidate-avatar">A</span>
+                        <span class="candidate-text">
+                            <strong>Candidate A</strong>
+                            <small>Demo candidate</small>
+                        </span>
+                        <span class="radio-mark"></span>
+                    </label>
+
+                    <label class="candidate">
+                        <input type="radio" name="candidate" value="Candidate B">
+                        <span class="candidate-avatar avatar-purple">B</span>
+                        <span class="candidate-text">
+                            <strong>Candidate B</strong>
+                            <small>Demo candidate</small>
+                        </span>
+                        <span class="radio-mark"></span>
+                    </label>
+
+                    <label class="candidate">
+                        <input type="radio" name="candidate" value="Candidate C">
+                        <span class="candidate-avatar avatar-orange">C</span>
+                        <span class="candidate-text">
+                            <strong>Candidate C</strong>
+                            <small>Demo candidate</small>
+                        </span>
+                        <span class="radio-mark"></span>
+                    </label>
+                </div>
+
+                <button class="primary-button full-button" id="demoSubmit">
+                    Preview ballot confirmation →
+                </button>
+                <p id="voteMessage" class="message" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <section class="section security-section" id="security">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">SECURITY BY DESIGN</div>
+                    <h2>Five locks. One fair vote<span class="brand-dot">.</span></h2>
+                    <p>Each lock addresses a different security requirement.</p>
+                </div>
+            </div>
+
+            <div class="lock-grid">
+                <article class="lock-card">
+                    <div class="lock-icon green">01</div>
+                    <span class="lock-tag">IDENTITY</span>
+                    <h3>Login</h3>
+                    <p>Check student eligibility and protect stored passwords.</p>
+                    <div class="algorithm">PBKDF2 · SHA-256</div>
+                </article>
+
+                <article class="lock-card">
+                    <div class="lock-icon blue">02</div>
+                    <span class="lock-tag">ELIGIBILITY</span>
+                    <h3>Pass</h3>
+                    <p>Use a one-time voting pass designed to separate identity from ballot.</p>
+                    <div class="algorithm">RSA blind signatures</div>
+                </article>
+
+                <article class="lock-card">
+                    <div class="lock-icon purple">03</div>
+                    <span class="lock-tag">CONFIDENTIALITY</span>
+                    <h3>Seal</h3>
+                    <p>Encrypt the ballot before it reaches the server.</p>
+                    <div class="algorithm">AES-GCM · RSA-OAEP</div>
+                </article>
+
+                <article class="lock-card">
+                    <div class="lock-icon orange">04</div>
+                    <span class="lock-tag">INTEGRITY</span>
+                    <h3>Chain</h3>
+                    <p>Link ballot records so unauthorized changes can be detected.</p>
+                    <div class="algorithm">SHA-256 hash chain</div>
+                </article>
+
+                <article class="lock-card">
+                    <div class="lock-icon pink">05</div>
+                    <span class="lock-tag">VERIFICATION</span>
+                    <h3>Receipt</h3>
+                    <p>Check whether your ballot appears in the published records.</p>
+                    <div class="algorithm">SHA-256 receipt</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section verify-section" id="verify">
+            <div class="verify-card">
+                <div class="verify-copy">
+                    <div class="eyebrow">YOUR BALLOT. YOUR PROOF.</div>
+                    <h2>Every vote deserves a receipt.</h2>
+                    <p>
+                        In the completed system, enter your receipt code to
+                        check whether the corresponding ballot appears in
+                        the election's published records.
+                    </p>
+                </div>
+
+                <form id="receiptForm" class="receipt-form">
+                    <label for="receiptCode">Ballot receipt code</label>
+                    <div class="receipt-input-row">
+                        <input
+                            id="receiptCode"
+                            type="text"
+                            placeholder="Enter receipt code"
+                            autocomplete="off"
+                            required
+                        >
+                        <button class="primary-button" type="submit">Check</button>
+                    </div>
+                    <p id="receiptMessage" class="message" aria-live="polite">
+                        Demo only — no real ballot records are connected.
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <section class="closing">
+            <div class="eyebrow">TRUST THROUGH VERIFICATION</div>
+            <h2>Don't just trust the system.<br>
+                <span>Verify its records.</span>
+            </h2>
+            <a href="#home" class="secondary-button">Back to top ↑</a>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#home" class="brand">
+            <span class="brand-icon">V</span>
+            VoteLock<span class="brand-dot">.</span>
+        </a>
+        <p>Student project · Cryptographically protected voting prototype</p>
+        <span class="footer-status"><span></span> Frontend preview</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
